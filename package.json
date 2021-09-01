@@ -1,0 +1,38 @@
+{
+  "name": "countathon",
+  "version": "1.0.0",
+  "description": "Let's Count to a million!",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts-serve": "tsc --watch --preserveWatchOutput",
+    "dev": "nodemon dist/index.js",
+    "build": "tsc",
+    "start": "yarn build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bajpai244/countathon.git"
+  },
+  "keywords": [
+    "Harsh",
+    "Bajpai",
+    "Counathon",
+    "Slack"
+  ],
+  "author": "Harsh Bajpai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bajpai244/countathon/issues"
+  },
+  "homepage": "https://github.com/bajpai244/countathon#readme",
+  "dependencies": {
+    "@tsconfig/node10": "^1.0.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
