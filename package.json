@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-serve": "tsc --watch --preserveWatchOutput",
-    "dev": "nodemon dist/index.js",
+    "dev": "nodemon dist/src/index.js",
     "build": "tsc",
     "start": "yarn build && node dist/index.js"
   },
@@ -30,7 +30,11 @@
   },
   "homepage": "https://github.com/bajpai244/countathon#readme",
   "dependencies": {
-    "@tsconfig/node10": "^1.0.8"
+    "@slack/bolt": "^3.6.0",
+    "@slack/web-api": "^6.4.0",
+    "@tsconfig/node10": "^1.0.8",
+    "dotenv": "^10.0.0",
+    "ramda": "^0.27.1"
   },
   "devDependencies": {
     "typescript": "^4.4.2"
