@@ -2,7 +2,7 @@ export const is_prod = process.env.PROD == "true";
 
 export const target = 1000000;
 
-export const channel = is_prod
+export const channel: string | undefined = is_prod
   ? process.env.PROD_CHANNEL
   : process.env.DEV_CHANNEL;
 

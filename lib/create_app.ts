@@ -8,6 +8,7 @@ import store from "./store/index";
 import { t_create_app } from "../lib/types/index";
 import { send_next_count } from "../src";
 import sleep from "./sleep";
+import { channel, target } from "./data";
 
 export default class Create_App implements t_create_app {
   client: WebClient;
@@ -37,12 +38,17 @@ export default class Create_App implements t_create_app {
 
     try {
       await this.client.chat.postMessage({
-        channel: "C02CYKLVB9B",
+        channel: channel ? channel : "",
         text: String(count),
       });
-
       store.increase();
-      if (count + 1 <= 1000000) send_next_count();
+      if (count + 1 <= target) send_next_count();
+
+      if (count == target)
+        await this.client.chat.postMessage({
+          channel: channel ? channel : "",
+          text: "Yay Done!",
+        });
     } catch {
       console.warn("there seems to some issue for count of ", count);
       this.send_count(count);
